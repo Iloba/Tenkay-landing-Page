@@ -1,17 +1,31 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const CoreOffer = () => {
     return (
         <section id="how-it-works" className="section-spacing">
             <div className="container">
-                <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', textAlign: 'center' }}>Our Core Offer</h2>
-                <p style={{ textAlign: 'center', fontSize: '1.25rem', marginBottom: '4rem', color: 'var(--text-secondary)' }}>
-                    Revenue SEO Sprint + Monthly Growth
-                </p>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', textAlign: 'center' }}>Our Core Offer</h2>
+                    <p style={{ textAlign: 'center', fontSize: '1.25rem', marginBottom: '4rem', color: 'var(--text-secondary)' }}>
+                        Revenue SEO Sprint + Monthly Growth
+                    </p>
+                </motion.div>
 
                 <div className="grid-2" style={{ alignItems: 'stretch', gap: '2rem' }}>
                     {/* Phase 1 */}
-                    <div style={{ padding: '2.5rem', border: '1px solid var(--border-color)', borderRadius: '8px' }}>
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        style={{ padding: '2.5rem', border: '1px solid var(--border-color)', borderRadius: '8px' }}
+                    >
                         <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Phase 1: Revenue SEO Sprint</h3>
                         <p style={{ marginBottom: '2rem', fontSize: '0.95rem' }}>Goal: Identify exactly where SEO revenue is being lost, and how to recover it fast.</p>
 
@@ -30,10 +44,16 @@ const CoreOffer = () => {
                             ))}
                         </ul>
                         <p style={{ fontStyle: 'italic', fontSize: '0.95rem' }}>"This sprint gives you clarity and immediate execution."</p>
-                    </div>
+                    </motion.div>
 
                     {/* Phase 2 */}
-                    <div style={{ padding: '2.5rem', border: '1px solid var(--border-color)', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        style={{ padding: '2.5rem', border: '1px solid var(--border-color)', borderRadius: '8px', backgroundColor: '#f9f9f9' }}
+                    >
                         <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Phase 2: SEO Growth</h3>
                         <p style={{ marginBottom: '2rem', fontSize: '0.95rem' }}>Goal: Turn insights into revenue-producing SEO assets.</p>
 
@@ -58,7 +78,7 @@ const CoreOffer = () => {
                         <div style={{ textAlign: 'center' }}>
                             <a href="#contact" className="btn" style={{ width: '100%' }}>Book A Strategy Call</a>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

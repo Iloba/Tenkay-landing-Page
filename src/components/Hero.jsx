@@ -1,11 +1,18 @@
 import React from 'react';
 import heroImage from '../assets/images/hero_image.jpg';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
         <section className="section-spacing" style={{ paddingTop: '4rem', paddingBottom: '6rem' }}>
             <div className="container grid-2">
-                <div className="text-center-mobile">
+                <motion.div
+                    className="text-center-mobile"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
                     <h1 style={{ fontSize: '3.5rem', marginBottom: '1.5rem', letterSpacing: '-0.03em' }}>
                         We Turn SEO Into Revenue
                     </h1>
@@ -18,10 +25,16 @@ const Hero = () => {
                     <a href="#contact" className="btn">
                         Book A Strategy Call Now
                     </a>
-                </div>
+                </motion.div>
 
                 {/* Hero Image */}
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <motion.div
+                    style={{ display: 'flex', justifyContent: 'center' }}
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                >
                     <img
                         src={heroImage}
                         alt="SEO Revenue Dashboard"
@@ -33,7 +46,7 @@ const Hero = () => {
                             objectFit: 'cover'
                         }}
                     />
-                </div>
+                </motion.div>
             </div>
         </section>
     );

@@ -1,10 +1,16 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const WhyDifferent = () => {
     return (
         <section className="section-spacing">
             <div className="container grid-2">
-                <div>
+                <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
                     <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>Why Tenkay Is Different</h2>
                     <p style={{ fontSize: '1.25rem', marginBottom: '2rem' }}>
                         Most SEO agencies optimize for rankings. <br />
@@ -19,9 +25,15 @@ const WhyDifferent = () => {
                     <p style={{ color: 'var(--text-light)' }}>
                         We don’t guess. We leverage competitor momentum, validated keywords, and proven page structures, then execute better.
                     </p>
-                </div>
+                </motion.div>
 
-                <div className="tenkay-approach-card">
+                <motion.div
+                    className="tenkay-approach-card"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                >
                     <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'white' }}>The Tenkay Approach</h3>
                     <p style={{ color: 'white', marginBottom: '2rem' }}>
                         Traditional agencies focus on traffic volume. We focus on traffic value.
@@ -37,7 +49,7 @@ const WhyDifferent = () => {
                             <div style={{ fontSize: '0.8rem', color: 'rgba(255, 255, 255, 0.8)' }}>Outcome</div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
