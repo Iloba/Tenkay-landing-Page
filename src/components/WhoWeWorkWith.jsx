@@ -1,5 +1,5 @@
 import React from 'react';
-import workWithUsImage from '../assets/images/work_with_us.png';
+import workWithUsImage from '../assets/images/work_with_us.jpg';
 
 const WhoWeWorkWith = () => {
     return (
