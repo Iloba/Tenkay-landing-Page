@@ -161,12 +161,23 @@ img {
 
 .mobile-menu-btn {
   display: none;
-  background: none;
+  background: transparent;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
-  color: var(--text-primary);
   padding: 0.5rem;
+  border-radius: 4px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  line-height: 0;
+  /* Align icon correctly */
+}
+
+.mobile-menu-btn:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.mobile-menu-btn:active {
+  transform: scale(0.95);
 }
 
 @media (max-width: 768px) {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../assets/images/ten-kay-png.png';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
                         src={logo}
                         alt="Tenkay"
                         style={{
-                            height: '60px',
+                            height: '60px', /* Increased from 40px based on previous context, or keeping consistent */
                             width: 'auto',
                             objectFit: 'contain'
                         }}
@@ -27,7 +28,7 @@ const Navbar = () => {
                     aria-label="Toggle menu"
                     style={{ zIndex: 1001 }}
                 >
-                    {isOpen ? '✕' : '☰'}
+                    {isOpen ? <X size={40} color="var(--brand-primary)" /> : <Menu size={40} color="var(--text-primary)" />}
                 </button>
 
                 {/* Links */}
